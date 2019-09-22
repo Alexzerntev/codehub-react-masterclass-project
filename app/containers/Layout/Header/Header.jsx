@@ -44,6 +44,7 @@ class Header extends Component {
       </Row>
     );
   }
+
 }
 
 export default Header;
