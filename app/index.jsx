@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Dashboard from "./components/Dashboard";
+import Layout from "./containers/Layout/Layout";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./app.css";
 
-ReactDOM.render(<Dashboard />, document.getElementById("⚛"));
+ReactDOM.render(<Layout />, document.getElementById("⚛"));

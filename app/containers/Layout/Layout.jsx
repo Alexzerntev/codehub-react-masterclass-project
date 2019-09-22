@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Container } from "reactstrap";
-import Header from "./Header";
-import Employees from "./Employees";
-import Footer from "./Footer";
+import Header from "./Header/Header";
+import Employees from "../Employees";
+import Footer from "./Footer/Footer";
 
-class Dashboard extends Component {
+class Layout extends Component {
   render() {
     return (
       <Container>
@@ -16,4 +16,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+export default Layout;

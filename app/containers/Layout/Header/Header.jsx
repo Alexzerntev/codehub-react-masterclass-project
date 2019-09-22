@@ -1,50 +1,22 @@
-import React, { Component } from "react";
-import axios from "axios";
-import { Row, Col, Navbar, NavbarBrand, Nav, Media } from "reactstrap";
+import React, { useState, useEffect } from "react";
 
-class Header extends Component {
-  state = {
-    user: null,
-  };
+import API from "../../../utils/API"
+import User from "../../../components/User/User";
 
-  async componentDidMount() {
-    const user = await axios.get("http://localhost:3001/user");
 
-    this.setState({ user: user.data });
-  }
+const Header = () => {
 
-  render() {
-    const { user } = this.state;
+  const [user, setUser] = useState(null);
 
-    return (
-      <Row>
-        <Col xs={12}>
-          <Navbar color="light" light>
-            <NavbarBrand href="#">Code.Hub Dashboard</NavbarBrand>
-            <Nav className="ml-auto" navbar>
-              {user && (
-                <Media>
-                  <Media left>
-                    <img
-                      className="rounded-circle"
-                      width="50"
-                      height="50"
-                      src={user.imgPath}
-                      alt={user.name}
-                    />
-                  </Media>
-                  <Media body className="user-text">
-                    {user.username}
-                  </Media>
-                </Media>
-              )}
-            </Nav>
-          </Navbar>
-        </Col>
-      </Row>
-    );
-  }
+  useEffect(() => {
+    API.get("user")
+      .then(res => { setUser(res.data); });
+  }, []);
 
-}
+
+  return (
+    <User user={user}></User>
+  );
+};
 
 export default Header;
