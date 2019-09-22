@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import API from "../../../utils/API"
+import API from "../../../utils/API";
 import User from "../../../components/User/User";
 
 

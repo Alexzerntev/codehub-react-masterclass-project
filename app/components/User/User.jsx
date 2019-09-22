@@ -3,6 +3,8 @@ import { Row, Col, Navbar, NavbarBrand, Nav, Media } from "reactstrap";
 
 import RoundedImage from "../RoundedImage/RoundedImage"
 
+import "./User.css"
+
 const User = ({ user }) => {
   return (
     <Row>
