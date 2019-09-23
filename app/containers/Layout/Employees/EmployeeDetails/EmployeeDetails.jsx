@@ -59,7 +59,7 @@ const EmployeeDetails = ({ selectedEmployee }) => {
               id="gender"
               label="Gender:"
               onChange={this.onSelectChange}
-              options={[<option>male</option>, <option>female</option>]}
+              options={["male", "female"]}
             />
 
             {/* <div className="form-group">
@@ -75,7 +75,7 @@ const EmployeeDetails = ({ selectedEmployee }) => {
               </select>
             </div> */}
 
-            <TextInput
+            < TextInput
               id="email"
               label="Email:"
               value={selectedEmployee.email}
@@ -94,7 +94,7 @@ const EmployeeDetails = ({ selectedEmployee }) => {
               />
             </div> */}
 
-            <TextInput
+            < TextInput
               id="phone"
               label="Phone:"
               value={selectedEmployee.phone}
@@ -113,7 +113,7 @@ const EmployeeDetails = ({ selectedEmployee }) => {
               />
             </div> */}
 
-            <TextInput
+            < TextInput
               id="mobile"
               label="Mobile:"
               value={selectedEmployee.mobile}
@@ -132,7 +132,7 @@ const EmployeeDetails = ({ selectedEmployee }) => {
               />
             </div> */}
 
-            <TextInput
+            < TextInput
               id="age"
               label="Age:"
               value={selectedEmployee.age}
@@ -151,7 +151,7 @@ const EmployeeDetails = ({ selectedEmployee }) => {
               />
             </div> */}
 
-            <button type="submit" className="btn btn-primary float-sm-right">
+            < button type="submit" className="btn btn-primary float-sm-right" >
               Submit
             </button>
           </form>
