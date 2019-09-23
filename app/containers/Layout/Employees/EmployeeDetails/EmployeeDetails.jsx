@@ -1,6 +1,11 @@
 import React from 'react';
 
+import TextInput from '../../../../components/Inputs/TextInput';
+import SelectInput from '../../../../components/Inputs/SelectInput';
+
 import "./EmployeeDetails.css"
+
+
 
 const EmployeeDetails = ({ selectedEmployee }) => {
   return (
@@ -13,7 +18,13 @@ const EmployeeDetails = ({ selectedEmployee }) => {
                     {selectedEmployee.department})
                   </h3>
           <form onSubmit={this.onFormSubmit}>
-            <div className="form-group">
+            <TextInput
+              id="firstName"
+              label="First Name:"
+              value={selectedEmployee.firstName}
+              onChange={this.onInputChange}
+            />
+            {/* <div className="form-group">
               <label htmlFor="firstName">First name:</label>
               <input
                 type="text"
@@ -23,9 +34,16 @@ const EmployeeDetails = ({ selectedEmployee }) => {
                 value={selectedEmployee.firstName}
                 onChange={this.onInputChange}
               />
-            </div>
+            </div> */}
 
-            <div className="form-group">
+            <TextInput
+              id="lastName"
+              label="Last Name:"
+              value={selectedEmployee.lastName}
+              onChange={this.onInputChange}
+            />
+
+            {/* <div className="form-group">
               <label htmlFor="lastName">Last name:</label>
               <input
                 type="text"
@@ -35,9 +53,16 @@ const EmployeeDetails = ({ selectedEmployee }) => {
                 value={selectedEmployee.lastName}
                 onChange={this.onInputChange}
               />
-            </div>
+            </div> */}
 
-            <div className="form-group">
+            <SelectInput
+              id="gender"
+              label="Gender:"
+              onChange={this.onSelectChange}
+              options={[<option>male</option>, <option>female</option>]}
+            />
+
+            {/* <div className="form-group">
               <label htmlFor="gender">Gender:</label>
               <select
                 id="gender"
@@ -48,9 +73,16 @@ const EmployeeDetails = ({ selectedEmployee }) => {
                 <option>male</option>
                 <option>female</option>
               </select>
-            </div>
+            </div> */}
 
-            <div className="form-group">
+            <TextInput
+              id="email"
+              label="Email:"
+              value={selectedEmployee.email}
+              onChange={this.onInputChange}
+            />
+
+            {/* <div className="form-group">
               <label htmlFor="email">Email:</label>
               <input
                 type="text"
@@ -60,9 +92,16 @@ const EmployeeDetails = ({ selectedEmployee }) => {
                 value={selectedEmployee.email}
                 onChange={this.onInputChange}
               />
-            </div>
+            </div> */}
 
-            <div className="form-group">
+            <TextInput
+              id="phone"
+              label="Phone:"
+              value={selectedEmployee.phone}
+              onChange={this.onInputChange}
+            />
+
+            {/* <div className="form-group">
               <label htmlFor="phone">Phone:</label>
               <input
                 type="text"
@@ -72,9 +111,16 @@ const EmployeeDetails = ({ selectedEmployee }) => {
                 value={selectedEmployee.phone}
                 onChange={this.onInputChange}
               />
-            </div>
+            </div> */}
 
-            <div className="form-group">
+            <TextInput
+              id="mobile"
+              label="Mobile:"
+              value={selectedEmployee.mobile}
+              onChange={this.onInputChange}
+            />
+
+            {/* <div className="form-group">
               <label htmlFor="mobile">Mobile:</label>
               <input
                 type="text"
@@ -84,9 +130,16 @@ const EmployeeDetails = ({ selectedEmployee }) => {
                 value={selectedEmployee.mobile}
                 onChange={this.onInputChange}
               />
-            </div>
+            </div> */}
 
-            <div className="form-group">
+            <TextInput
+              id="age"
+              label="Age:"
+              value={selectedEmployee.age}
+              onChange={this.onInputChange}
+            />
+
+            {/* <div className="form-group">
               <label htmlFor="age">Age:</label>
               <input
                 type="text"
@@ -96,7 +149,7 @@ const EmployeeDetails = ({ selectedEmployee }) => {
                 value={selectedEmployee.age}
                 onChange={this.onInputChange}
               />
-            </div>
+            </div> */}
 
             <button type="submit" className="btn btn-primary float-sm-right">
               Submit
