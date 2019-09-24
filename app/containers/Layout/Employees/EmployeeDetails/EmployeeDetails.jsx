@@ -39,7 +39,7 @@ const EmployeeDetails = ({ selectedEmployee, setEmployees, setSelectedEmployee }
             {selectedEmployee.id}:{" "}
             {`${selectedEmployee.firstName} ${selectedEmployee.lastName}`} (
                     {selectedEmployee.department})
-                  </h3>
+          </h3>
           <form onSubmit={onFormSubmit}>
             <TextInput
               id="firstName"
