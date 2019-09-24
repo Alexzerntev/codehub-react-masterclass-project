@@ -13,8 +13,12 @@ const Employees = () => {
   useEffect(() => {
     // Immediately invoked function
     (async () => {
-      const employees = await API.get("employees");
-      setEmployees(employees.data);
+      try {
+        const employees = await API.get("employees");
+        setEmployees(employees.data);
+      } catch (error) {
+
+      }
     })();
   }, []);
 

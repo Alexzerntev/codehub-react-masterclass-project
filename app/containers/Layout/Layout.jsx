@@ -13,8 +13,12 @@ const Layout = () => {
 
   useEffect(() => {
     (async () => {
-      const user = API.get("user");
-      setUser(user.data);
+      try {
+        const user = API.get("user");
+        setUser(user.data);
+      } catch (error) {
+
+      }
     })();
   }, []);
 

@@ -18,13 +18,17 @@ const EmployeeDetails = ({ selectedEmployee, setEmployees, setSelectedEmployee }
   };
 
   const onFormSubmit = async (e) => {
-    e.preventDefault();
-    const { id, ...rest } = selectedEmployee;
+    try {
+      e.preventDefault();
+      const { id, ...rest } = selectedEmployee;
 
-    await API.put(`employees/${id}`, rest);
-    const employees = await API.get("employees");
+      await API.put(`employees/${id}`, rest);
+      const employees = await API.get("employees");
 
-    setEmployees(employees.data);
+      setEmployees(employees.data);
+    } catch (error) {
+
+    }
   };
 
   return (
