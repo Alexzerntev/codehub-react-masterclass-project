@@ -2,12 +2,31 @@ import React from 'react';
 
 import TextInput from '../../../../components/Inputs/TextInput';
 import SelectInput from '../../../../components/Inputs/SelectInput';
-
-import "./EmployeeDetails.css"
-
+import API from '../../../../utils/API';
 
 
-const EmployeeDetails = ({ selectedEmployee }) => {
+const EmployeeDetails = ({ selectedEmployee, setEmployees, setSelectedEmployee }) => {
+
+  const onInputChange = (e) => {
+    const { value, name } = e.target;
+    setSelectedEmployee({ ...selectedEmployee, [name]: value });
+  };
+
+  const onSelectChange = (e) => {
+    const { value } = e.target;
+    setSelectedEmployee({ ...selectedEmployee, gender: value });
+  };
+
+  const onFormSubmit = async (e) => {
+    e.preventDefault();
+    const { id, ...rest } = selectedEmployee;
+
+    await API.put(`employees/${id}`, rest);
+    const employees = await API.get("employees");
+
+    setEmployees(employees.data);
+  };
+
   return (
     <div className="employee-details">
       {selectedEmployee ? (
@@ -17,139 +36,55 @@ const EmployeeDetails = ({ selectedEmployee }) => {
             {`${selectedEmployee.firstName} ${selectedEmployee.lastName}`} (
                     {selectedEmployee.department})
                   </h3>
-          <form onSubmit={this.onFormSubmit}>
+          <form onSubmit={onFormSubmit}>
             <TextInput
               id="firstName"
               label="First Name:"
               value={selectedEmployee.firstName}
-              onChange={this.onInputChange}
+              onChange={(e) => onInputChange(e)}
             />
-            {/* <div className="form-group">
-              <label htmlFor="firstName">First name:</label>
-              <input
-                type="text"
-                className="form-control"
-                id="firstName"
-                name="firstName"
-                value={selectedEmployee.firstName}
-                onChange={this.onInputChange}
-              />
-            </div> */}
 
             <TextInput
               id="lastName"
               label="Last Name:"
               value={selectedEmployee.lastName}
-              onChange={this.onInputChange}
+              onChange={(e) => onInputChange(e)}
             />
-
-            {/* <div className="form-group">
-              <label htmlFor="lastName">Last name:</label>
-              <input
-                type="text"
-                className="form-control"
-                id="lastName"
-                name="lastName"
-                value={selectedEmployee.lastName}
-                onChange={this.onInputChange}
-              />
-            </div> */}
 
             <SelectInput
               id="gender"
               label="Gender:"
-              onChange={this.onSelectChange}
+              onChange={onSelectChange}
               options={["male", "female"]}
             />
-
-            {/* <div className="form-group">
-              <label htmlFor="gender">Gender:</label>
-              <select
-                id="gender"
-                name="gender"
-                className="form-control"
-                onChange={this.onSelectChange}
-              >
-                <option>male</option>
-                <option>female</option>
-              </select>
-            </div> */}
 
             < TextInput
               id="email"
               label="Email:"
               value={selectedEmployee.email}
-              onChange={this.onInputChange}
+              onChange={(e) => onInputChange(e)}
             />
-
-            {/* <div className="form-group">
-              <label htmlFor="email">Email:</label>
-              <input
-                type="text"
-                className="form-control"
-                id="email"
-                name="email"
-                value={selectedEmployee.email}
-                onChange={this.onInputChange}
-              />
-            </div> */}
 
             < TextInput
               id="phone"
               label="Phone:"
               value={selectedEmployee.phone}
-              onChange={this.onInputChange}
+              onChange={(e) => onInputChange(e)}
             />
-
-            {/* <div className="form-group">
-              <label htmlFor="phone">Phone:</label>
-              <input
-                type="text"
-                className="form-control"
-                id="phone"
-                name="phone"
-                value={selectedEmployee.phone}
-                onChange={this.onInputChange}
-              />
-            </div> */}
 
             < TextInput
               id="mobile"
               label="Mobile:"
               value={selectedEmployee.mobile}
-              onChange={this.onInputChange}
+              onChange={(e) => onInputChange(e)}
             />
-
-            {/* <div className="form-group">
-              <label htmlFor="mobile">Mobile:</label>
-              <input
-                type="text"
-                className="form-control"
-                id="mobile"
-                name="mobile"
-                value={selectedEmployee.mobile}
-                onChange={this.onInputChange}
-              />
-            </div> */}
 
             < TextInput
               id="age"
               label="Age:"
               value={selectedEmployee.age}
-              onChange={this.onInputChange}
+              onChange={(e) => onInputChange(e)}
             />
-
-            {/* <div className="form-group">
-              <label htmlFor="age">Age:</label>
-              <input
-                type="text"
-                className="form-control"
-                id="age"
-                name="age"
-                value={selectedEmployee.age}
-                onChange={this.onInputChange}
-              />
-            </div> */}
 
             < button type="submit" className="btn btn-primary float-sm-right" >
               Submit

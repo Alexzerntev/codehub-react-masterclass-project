@@ -10,7 +10,7 @@ const SelectInput = ({ options, id, label, onChange }) => {
                 className="form-control"
                 onChange={onChange}
             >
-                {options.map((option) => { return (<option>{option}</option>); })}
+                {options.map((index, option) => { return (<option key={index}>{option}</option>); })}
             </select>
         </div>
     );

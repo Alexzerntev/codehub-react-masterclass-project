@@ -1,3 +1,0 @@
-rounded image component
-
-header logic and representation seperation

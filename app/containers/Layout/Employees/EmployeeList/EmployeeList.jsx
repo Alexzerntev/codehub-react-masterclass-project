@@ -1,15 +1,15 @@
 import React from 'react';
 import EmployeeListItem from '../../../../components/Employees/EmpoyeeListItem/EmployeeListItem';
 
-import './EmployeeList.css'
-
-const EmployeeList = ({ employees }) => {
+const EmployeeList = ({ employees, onSelectEmployee }) => {
   return (
     <div className="employees-list">
       <ul>
         {employees.length &&
           employees.map((employee) => (
-            <EmployeeListItem key={employee.id} employee={employee} />
+            <li key={employee.id} className="employee-list-item">
+              <EmployeeListItem employee={employee} onSelectEmployee={onSelectEmployee} />
+            </li>
           ))}
       </ul>
     </div>
