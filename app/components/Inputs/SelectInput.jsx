@@ -1,6 +1,8 @@
 import React from 'react';
 
-const SelectInput = ({ options, id, label, onChange }) => {
+const SelectInput = ({ options, id, label, value, onChange }) => {
+    console.log(options);
+
     return (
         <div className="form-group">
             <label htmlFor={id}>{label}</label>
@@ -8,9 +10,10 @@ const SelectInput = ({ options, id, label, onChange }) => {
                 id={id}
                 name={id}
                 className="form-control"
+                value={value}
                 onChange={onChange}
             >
-                {options.map((index, option) => { return (<option key={index}>{option}</option>); })}
+                {options.map((option, index) => { return (<option key={index}>{option}</option>); })}
             </select>
         </div>
     );

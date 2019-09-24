@@ -5,11 +5,19 @@ import Employees from "./Employees/Employees";
 import Footer from "./Footer/Footer";
 
 const Layout = () => {
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    API.get("user")
+      .then(res => { setUser(res.data); });
+  }, []);
+
   return (
     <Container>
-      <Header/>
-      <Employees/>
-      <Footer/>
+      <Header user={user} />
+      <Employees />
+      <Footer user={user} />
     </Container>
   );
 };

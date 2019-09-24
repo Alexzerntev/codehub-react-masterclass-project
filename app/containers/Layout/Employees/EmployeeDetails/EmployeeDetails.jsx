@@ -55,6 +55,7 @@ const EmployeeDetails = ({ selectedEmployee, setEmployees, setSelectedEmployee }
               id="gender"
               label="Gender:"
               onChange={onSelectChange}
+              value={selectedEmployee.gender}
               options={["male", "female"]}
             />
 

@@ -4,16 +4,7 @@ import API from "../../../utils/API";
 import User from "../../../components/User/User";
 
 
-const Header = () => {
-
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    API.get("user")
-      .then(res => { setUser(res.data); });
-  }, []);
-
-
+const Header = ({ user }) => {
   return (
     <User user={user}></User>
   );
