@@ -11,29 +11,24 @@ import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 const Layout = () => {
 
   const [user, setUser] = useState(null);
-  const [hasError, setHasError] = useState(null);
 
   useEffect(() => {
     (async () => {
       try {
         const user = await API.get("user");
         setUser(user.data);
-        setHasError(false);
       } catch (error) {
-        setHasError(true);
       }
     })();
   }, []);
 
   return (
     <Container>
-      <ErrorBoundary hasError={hasError}>
-        <Header user={user} />
-        <ErrorBoundary>
-          <Employees />
-        </ErrorBoundary>
-        <Footer user={user} />
+      <Header user={user} />
+      <ErrorBoundary>
+        <Employees />
       </ErrorBoundary>
+      <Footer user={user} />
     </Container>
   );
 };
