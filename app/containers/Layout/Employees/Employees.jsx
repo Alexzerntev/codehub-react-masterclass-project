@@ -17,7 +17,7 @@ const Employees = () => {
         const employees = await API.get("employees");
         setEmployees(employees.data);
       } catch (error) {
-        throw new Error(error);
+
       }
     })();
   }, []);

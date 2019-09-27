@@ -27,7 +27,7 @@ const EmployeeDetails = ({ selectedEmployee, setEmployees, setSelectedEmployee }
 
       setEmployees(employees.data);
     } catch (error) {
-      throw new Error(error);
+
     }
   };
 
