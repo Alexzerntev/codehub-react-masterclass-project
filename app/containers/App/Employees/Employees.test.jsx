@@ -12,11 +12,6 @@ describe('Employees', () => {
         expect(employees).toMatchSnapshot();
     });
 
-    describe('Initialize', () => {
-        it('initializes `employees` with an empty list of employees', () => {
-            expect(employees.prop("employees")).toEqual([]);
-        });
-    });
 
 });
 
