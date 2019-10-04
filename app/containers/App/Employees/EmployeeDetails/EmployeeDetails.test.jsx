@@ -5,11 +5,12 @@ import EmployeeDetails from "./EmployeeDetails"
 
 configure({ adapter: new Adapter() });
 
-describe('App', () => {
+describe('Employee Details', () => {
     const employeeDetails = shallow(<EmployeeDetails />);
 
     it('renders correctly', () => {
         expect(employeeDetails).toMatchSnapshot();
     });
+
 });
 

@@ -3,8 +3,13 @@ Done:
 2) Test (behavioral design)
 
 Pros:
+-- Hooks
 1) Better, smaller code
 
 
 Cons:
+-- Hooks
 1) No error handling with hooks
+-- Testing
+2) No test for hooks exept if it called
+3) Shallow is not good beacause you can not test props derivation
