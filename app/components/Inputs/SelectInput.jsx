@@ -1,8 +1,6 @@
 import React from 'react';
 
 const SelectInput = ({ options, id, label, value, onChange }) => {
-    console.log(options);
-
     return (
         <div className="form-group">
             <label htmlFor={id}>{label}</label>

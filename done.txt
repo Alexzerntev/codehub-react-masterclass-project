@@ -1,0 +1,10 @@
+Done:
+1) Hooks
+2) Test (behavioral design)
+
+Pros:
+1) Better, smaller code
+
+
+Cons:
+1) No error handling with hooks

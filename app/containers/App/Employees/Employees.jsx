@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col } from "reactstrap";
 
 import API from "../../../utils/API";
-import EmployeeList from "./EmployeeList/EmployeeList";
+import EmployeeList from "../../../components/Employees/EmployeeList/EmployeeList";
 import EmployeeDetails from "./EmployeeDetails/EmployeeDetails";
 
 const Employees = () => {

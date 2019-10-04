@@ -1,5 +1,5 @@
 import React from 'react';
-import EmployeeListItem from '../../../../components/Employees/EmpoyeeListItem/EmployeeListItem';
+import EmployeeListItem from '../EmpoyeeListItem/EmployeeListItem';
 
 const EmployeeList = ({ employees, onSelectEmployee }) => {
   return (

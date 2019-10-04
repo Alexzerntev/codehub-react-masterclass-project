@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Layout from "./containers/Layout/Layout";
+import App from "./containers/App/App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./app.css";
 
-ReactDOM.render(<Layout />, document.getElementById("⚛"));
+ReactDOM.render(<App />, document.getElementById("⚛"));

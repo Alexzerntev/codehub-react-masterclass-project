@@ -5,7 +5,7 @@ import Header from "./Header"
 
 configure({ adapter: new Adapter() });
 
-describe('App', () => {
+describe('Header', () => {
     const header = shallow(<Header />);
 
     it('renders correctly', () => {

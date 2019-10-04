@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "reactstrap";
 
-import Header from "./Header/Header";
+import Header from "../../components/Header/Header";
 import Employees from "./Employees/Employees";
-import Footer from "./Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 
 import API from "../../utils/API";
-import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 
-const Layout = () => {
+const App = () => {
 
   const [user, setUser] = useState(null);
 
@@ -25,12 +24,10 @@ const Layout = () => {
   return (
     <Container>
       <Header user={user} />
-      <ErrorBoundary>
         <Employees />
-      </ErrorBoundary>
       <Footer user={user} />
     </Container>
   );
 };
 
-export default Layout;
+export default App;
